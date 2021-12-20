@@ -91,6 +91,9 @@ FROM covid19
 GROUP BY Country
 order by  Totalcases desc;
 
+
+/* Calculating Infection fatality rate (IFR) */
+
 ALTER TABLE covid19 ADD COLUMN  IFR FLOAT;
 UPDATE covid19 SET IFR = (Cumulative_deaths/Cumulative_cases)*100;
 
